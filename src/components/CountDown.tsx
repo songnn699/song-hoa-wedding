@@ -7,57 +7,51 @@ function Countdown({ target }: { target: string }) {
 
   useEffect(() => {
     const targetDate = new Date(target).getTime();
-
     const tick = () => {
-      const now  = Date.now();
-      const diff = targetDate - now;
-
-      if (diff <= 0) {
-        setIsPast(true);
-        setTime({ d: 0, h: 0, m: 0, s: 0 });
-        return;
-      }
+      const diff = targetDate - Date.now();
+      if (diff <= 0) { setIsPast(true); return; }
       setTime({
         d: Math.floor(diff / 86400000),
         h: Math.floor((diff / 3600000) % 24),
-        m: Math.floor((diff / 60000) % 60),
-        s: Math.floor((diff / 1000)  % 60),
+        m: Math.floor((diff / 60000)   % 60),
+        s: Math.floor((diff / 1000)    % 60),
       });
     };
-
     tick();
-    const timer = setInterval(tick, 1000);
-    return () => clearInterval(timer);
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
   }, [target]);
 
   if (isPast) {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        style={{ textAlign: 'center', padding: '2rem' }}
+        style={{ textAlign: 'center', padding: '1.5rem 0' }}
       >
         <p style={{
-          fontFamily:  'var(--font-display)',
-          fontSize:    '1.6rem',
-          fontStyle:   'italic',
-          color:       'var(--rose)',
-          fontWeight:  300,
+          fontFamily:    'var(--font-display)',
+          fontSize:      'clamp(1.4rem, 3vw, 1.8rem)',
+          fontStyle:     'italic',
+          fontWeight:    300,
+          color:         'var(--black)',
+          margin:        0,
+          letterSpacing: '0.03em',
         }}>
           Ngày hôn lễ đã diễn ra
         </p>
         <p style={{
           fontFamily:    'var(--font-body)',
-          fontSize:      '0.72rem',
+          fontSize:      '0.7rem',
           textTransform: 'uppercase',
-          letterSpacing: '0.2em',
-          color:         'var(--divider)',
-          marginTop:     '0.4rem',
-          fontWeight:    300,
+          letterSpacing: '0.22em',
+          color:         'var(--gray-mid)',
+          marginTop:     '0.5rem',
+          fontWeight:    400,
         }}>
-          14 · 12 · 2025 &nbsp;♥
+          14 · 12 · 2025
         </p>
       </motion.div>
     );
@@ -71,28 +65,25 @@ function Countdown({ target }: { target: string }) {
   ];
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', backgroundColor: 'var(--gray-light)' }}>
       {items.map((item, i) => (
         <motion.div
           key={item.label}
-          initial={{ opacity: 0, y: 35 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.1 }}
+          transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.09 }}
           style={{
+            backgroundColor: 'var(--gray-bg)',
             textAlign:       'center',
-            padding:         '1.25rem 0.5rem',
-            borderRadius:    '0.9rem',
-            background:      'linear-gradient(145deg, #fff7f4, #fce8ea)',
-            border:          '1px solid var(--blush-light)',
-            boxShadow:       '0 2px 16px rgba(201,115,122,0.07)',
+            padding:         '2rem 0.75rem',
           }}
         >
           <div style={{
             fontFamily:    'var(--font-display)',
-            fontSize:      'clamp(2rem, 6vw, 2.8rem)',
+            fontSize:      'clamp(2.2rem, 5.5vw, 3.2rem)',
             fontWeight:    300,
-            color:         'var(--rose)',
+            color:         'var(--black)',
             lineHeight:    1,
             letterSpacing: '-0.02em',
           }}>
@@ -100,11 +91,11 @@ function Countdown({ target }: { target: string }) {
           </div>
           <div style={{
             fontFamily:    'var(--font-body)',
-            fontSize:      '0.62rem',
+            fontSize:      '0.6rem',
             textTransform: 'uppercase',
-            letterSpacing: '0.2em',
-            color:         'var(--brown-mid)',
-            marginTop:     '0.45rem',
+            letterSpacing: '0.22em',
+            color:         'var(--gray-mid)',
+            marginTop:     '0.55rem',
             fontWeight:    400,
           }}>
             {item.label}

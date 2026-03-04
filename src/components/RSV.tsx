@@ -12,38 +12,44 @@ export default function RSVP() {
     setSent(true);
   };
 
+  const inputStyle: React.CSSProperties = {
+    width:           '100%',
+    padding:         '0.85rem 0',
+    borderRadius:    0,
+    border:          'none',
+    borderBottom:    '1px solid var(--black)',
+    backgroundColor: 'transparent',
+    color:           'var(--black)',
+    fontFamily:      'var(--font-body)',
+    fontSize:        '0.95rem',
+    fontWeight:      300,
+    outline:         'none',
+  };
+
   if (sent) {
     return (
       <motion.div
-        initial={{ opacity: 0, scale: 0.92 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-        style={{
-          textAlign:       'center',
-          padding:         '3rem 2rem',
-          borderRadius:    '1.25rem',
-          backgroundColor: 'var(--card)',
-          border:          '1px solid var(--blush)',
-          boxShadow:       '0 4px 24px rgba(201,115,122,0.08)',
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        style={{ padding: '3rem 0', textAlign: 'center' }}
       >
-        <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>♥</div>
         <p style={{
           fontFamily:  'var(--font-display)',
-          fontSize:    '1.6rem',
+          fontSize:    'clamp(1.4rem, 3vw, 1.8rem)',
           fontStyle:   'italic',
-          color:       'var(--rose)',
           fontWeight:  300,
-          margin:      0,
+          color:       'var(--black)',
+          margin:      '0 0 0.5rem',
         }}>
           Cảm ơn, {name}!
         </p>
         <p style={{
           fontFamily:  'var(--font-body)',
-          fontSize:    '0.88rem',
-          color:       'var(--brown-mid)',
-          marginTop:   '0.5rem',
+          fontSize:    '0.9rem',
+          color:       'var(--gray-mid)',
           fontWeight:  300,
+          margin:      0,
         }}>
           {attend === 'Đến'
             ? 'Chúng tôi rất vui khi được đón bạn.'
@@ -53,74 +59,76 @@ export default function RSVP() {
     );
   }
 
-  const inputStyle: React.CSSProperties = {
-    width:           '100%',
-    padding:         '0.75rem 1rem',
-    borderRadius:    '0.65rem',
-    border:          '1px solid var(--blush)',
-    backgroundColor: '#fff',
-    color:           'var(--warm-brown)',
-    fontFamily:      'var(--font-body)',
-    fontSize:        '0.9rem',
-    fontWeight:      300,
-    outline:         'none',
-    transition:      'border-color 0.2s',
-  };
-
   return (
     <motion.form
-      initial={{ opacity: 0, y: 35 }}
+      initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.65, ease: 'easeOut' }}
       onSubmit={handleSubmit}
-      style={{
-        display:         'flex',
-        flexDirection:   'column',
-        gap:             '0.9rem',
-        padding:         '2rem 1.75rem',
-        borderRadius:    '1.25rem',
-        backgroundColor: 'var(--card)',
-        border:          '1px solid var(--blush-light)',
-        boxShadow:       '0 4px 24px rgba(201,115,122,0.07)',
-      }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
     >
-      <input
-        style={inputStyle}
-        placeholder='Tên của bạn'
-        value={name}
-        onChange={e => setName(e.target.value)}
-        required
-        onFocus={e  => (e.target.style.borderColor = 'var(--rose)')}
-        onBlur={e   => (e.target.style.borderColor = 'var(--blush)')}
-      />
+      <div>
+        <label style={{
+          display:       'block',
+          fontFamily:    'var(--font-body)',
+          fontSize:      '0.65rem',
+          textTransform: 'uppercase',
+          letterSpacing: '0.22em',
+          color:         'var(--gray-mid)',
+          fontWeight:    400,
+          marginBottom:  '0.4rem',
+        }}>
+          Tên của bạn
+        </label>
+        <input
+          style={inputStyle}
+          value={name}
+          onChange={e => setName(e.target.value)}
+          required
+          placeholder='Nhập họ tên'
+        />
+      </div>
 
-      <select
-        style={inputStyle}
-        value={attend}
-        onChange={e => setAttend(e.target.value)}
-      >
-        <option>Đến</option>
-        <option>Xin lỗi, bận rồi</option>
-      </select>
+      <div>
+        <label style={{
+          display:       'block',
+          fontFamily:    'var(--font-body)',
+          fontSize:      '0.65rem',
+          textTransform: 'uppercase',
+          letterSpacing: '0.22em',
+          color:         'var(--gray-mid)',
+          fontWeight:    400,
+          marginBottom:  '0.4rem',
+        }}>
+          Phản hồi
+        </label>
+        <select
+          style={inputStyle}
+          value={attend}
+          onChange={e => setAttend(e.target.value)}
+        >
+          <option>Đến</option>
+          <option>Xin lỗi, bận rồi</option>
+        </select>
+      </div>
 
       <motion.button
         type='submit'
-        whileHover={{ scale: 1.02, backgroundColor: 'var(--rose-dark)' }}
-        whileTap={{ scale: 0.97 }}
+        whileHover={{ backgroundColor: 'var(--off-black)' }}
+        whileTap={{ scale: 0.98 }}
         style={{
-          width:          '100%',
-          padding:        '0.85rem',
-          borderRadius:   '2rem',
-          border:         'none',
-          backgroundColor:'var(--rose)',
-          color:          '#fff',
-          fontFamily:     'var(--font-body)',
-          fontSize:       '0.75rem',
-          fontWeight:     400,
-          textTransform:  'uppercase',
-          letterSpacing:  '0.22em',
-          transition:     'background-color 0.2s',
+          padding:         '1rem 2.5rem',
+          backgroundColor: 'var(--black)',
+          color:           'var(--white)',
+          border:          'none',
+          fontFamily:      'var(--font-body)',
+          fontSize:        '0.68rem',
+          textTransform:   'uppercase',
+          letterSpacing:   '0.25em',
+          fontWeight:      400,
+          alignSelf:       'flex-start',
+          transition:      'background-color 0.2s',
         }}
       >
         Gửi phản hồi
