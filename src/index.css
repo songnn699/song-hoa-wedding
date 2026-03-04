@@ -8,8 +8,8 @@
   --gray-light:   #e0e0e0;
   --white:        #ffffff;
 
-  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-display: 'Playfair Display', 'Times New Roman', serif;
+  --font-body:    'Lora', Georgia, serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
