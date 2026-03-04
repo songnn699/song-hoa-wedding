@@ -40,18 +40,18 @@ function Countdown({ target }: { target: string }) {
           margin:        0,
           letterSpacing: '0.03em',
         }}>
-          Ngày hôn lễ đã diễn ra
+          Ngày hôn lễ diễn ra
         </p>
         <p style={{
-          fontFamily:    'var(--font-body)',
-          fontSize:      '0.78rem',
+          fontFamily:    'var(--font-display)',
+          fontSize:      '1.5rem',
           textTransform: 'uppercase',
           letterSpacing: '0.22em',
           color:         'var(--gray-mid)',
           marginTop:     '0.6rem',
           fontWeight:    500,
         }}>
-          14 · 12 · 2025
+          29 · 03 · 2025
         </p>
       </motion.div>
     );

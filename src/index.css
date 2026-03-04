@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Yeseva+One&display=swap');
 @import 'tailwindcss';
 
 :root {
@@ -8,8 +9,8 @@
   --gray-light:   #e0e0e0;
   --white:        #ffffff;
 
-  --font-display: 'Bodoni Moda', 'Times New Roman', serif;
-  --font-body:    'Hanken Grotesk', system-ui, sans-serif;
+  --font-display: 'Libre Bodoni',  serif;
+  --font-body:    'Cormorant Garamond', system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
