@@ -29,7 +29,7 @@ export default function Timeline() {
           {/* Time */}
           <span style={{
             fontFamily:    'var(--font-display)',
-            fontSize:      '1.05rem',
+            fontSize:      'clamp(1.1rem, 2vw, 1.35rem)',
             fontWeight:    400,
             color:         'var(--black)',
             letterSpacing: '0.02em',
@@ -39,14 +39,14 @@ export default function Timeline() {
           </span>
 
           {/* Thin separator */}
-          <div style={{ height: '1.2rem', width: 1, backgroundColor: 'var(--gray-mid)' }} />
+          <div style={{ height: '1.4rem', width: 1, backgroundColor: 'var(--gray-mid)' }} />
 
           {/* Event */}
           <span style={{
             fontFamily: 'var(--font-body)',
-            fontSize:   '0.95rem',
+            fontSize:   'clamp(1rem, 1.8vw, 1.2rem)',
             color:      '#444',
-            fontWeight: 300,
+            fontWeight: 400,
           }}>
             {e.text}
           </span>

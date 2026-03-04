@@ -33,9 +33,9 @@ function Countdown({ target }: { target: string }) {
       >
         <p style={{
           fontFamily:    'var(--font-display)',
-          fontSize:      'clamp(1.4rem, 3vw, 1.8rem)',
+          fontSize:      'clamp(1.6rem, 3.5vw, 2.2rem)',
           fontStyle:     'italic',
-          fontWeight:    300,
+          fontWeight:    400,
           color:         'var(--black)',
           margin:        0,
           letterSpacing: '0.03em',
@@ -44,12 +44,12 @@ function Countdown({ target }: { target: string }) {
         </p>
         <p style={{
           fontFamily:    'var(--font-body)',
-          fontSize:      '0.7rem',
+          fontSize:      '0.78rem',
           textTransform: 'uppercase',
           letterSpacing: '0.22em',
           color:         'var(--gray-mid)',
-          marginTop:     '0.5rem',
-          fontWeight:    400,
+          marginTop:     '0.6rem',
+          fontWeight:    500,
         }}>
           14 · 12 · 2025
         </p>
@@ -81,22 +81,22 @@ function Countdown({ target }: { target: string }) {
         >
           <div style={{
             fontFamily:    'var(--font-display)',
-            fontSize:      'clamp(2.2rem, 5.5vw, 3.2rem)',
-            fontWeight:    300,
+            fontSize:      'clamp(2.6rem, 6vw, 3.8rem)',
+            fontWeight:    400,
             color:         'var(--black)',
             lineHeight:    1,
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.01em',
           }}>
             {String(item.value).padStart(2, '0')}
           </div>
           <div style={{
             fontFamily:    'var(--font-body)',
-            fontSize:      '0.6rem',
+            fontSize:      '0.72rem',
             textTransform: 'uppercase',
             letterSpacing: '0.22em',
             color:         'var(--gray-mid)',
-            marginTop:     '0.55rem',
-            fontWeight:    400,
+            marginTop:     '0.6rem',
+            fontWeight:    500,
           }}>
             {item.label}
           </div>

@@ -14,15 +14,15 @@ export default function RSVP() {
 
   const inputStyle: React.CSSProperties = {
     width:           '100%',
-    padding:         '0.85rem 0',
+    padding:         '0.9rem 0',
     borderRadius:    0,
     border:          'none',
     borderBottom:    '1px solid var(--black)',
     backgroundColor: 'transparent',
     color:           'var(--black)',
     fontFamily:      'var(--font-body)',
-    fontSize:        '0.95rem',
-    fontWeight:      300,
+    fontSize:        '1.05rem',
+    fontWeight:      400,
     outline:         'none',
   };
 
@@ -36,9 +36,9 @@ export default function RSVP() {
       >
         <p style={{
           fontFamily:  'var(--font-display)',
-          fontSize:    'clamp(1.4rem, 3vw, 1.8rem)',
+          fontSize:    'clamp(1.6rem, 3.5vw, 2.2rem)',
           fontStyle:   'italic',
-          fontWeight:  300,
+          fontWeight:  400,
           color:       'var(--black)',
           margin:      '0 0 0.5rem',
         }}>
@@ -46,9 +46,9 @@ export default function RSVP() {
         </p>
         <p style={{
           fontFamily:  'var(--font-body)',
-          fontSize:    '0.9rem',
+          fontSize:    '1.05rem',
           color:       'var(--gray-mid)',
-          fontWeight:  300,
+          fontWeight:  400,
           margin:      0,
         }}>
           {attend === 'Đến'
@@ -72,12 +72,12 @@ export default function RSVP() {
         <label style={{
           display:       'block',
           fontFamily:    'var(--font-body)',
-          fontSize:      '0.65rem',
+          fontSize:      '0.75rem',
           textTransform: 'uppercase',
           letterSpacing: '0.22em',
           color:         'var(--gray-mid)',
-          fontWeight:    400,
-          marginBottom:  '0.4rem',
+          fontWeight:    500,
+          marginBottom:  '0.5rem',
         }}>
           Tên của bạn
         </label>
@@ -94,12 +94,12 @@ export default function RSVP() {
         <label style={{
           display:       'block',
           fontFamily:    'var(--font-body)',
-          fontSize:      '0.65rem',
+          fontSize:      '0.75rem',
           textTransform: 'uppercase',
           letterSpacing: '0.22em',
           color:         'var(--gray-mid)',
-          fontWeight:    400,
-          marginBottom:  '0.4rem',
+          fontWeight:    500,
+          marginBottom:  '0.5rem',
         }}>
           Phản hồi
         </label>
@@ -118,15 +118,15 @@ export default function RSVP() {
         whileHover={{ backgroundColor: 'var(--off-black)' }}
         whileTap={{ scale: 0.98 }}
         style={{
-          padding:         '1rem 2.5rem',
+          padding:         '1.1rem 3rem',
           backgroundColor: 'var(--black)',
           color:           'var(--white)',
           border:          'none',
           fontFamily:      'var(--font-body)',
-          fontSize:        '0.68rem',
+          fontSize:        '0.78rem',
           textTransform:   'uppercase',
           letterSpacing:   '0.25em',
-          fontWeight:      400,
+          fontWeight:      500,
           alignSelf:       'flex-start',
           transition:      'background-color 0.2s',
         }}

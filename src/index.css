@@ -8,8 +8,8 @@
   --gray-light:   #e0e0e0;
   --white:        #ffffff;
 
-  --font-display: 'Playfair Display', 'Times New Roman', serif;
-  --font-body:    'Lora', Georgia, serif;
+  --font-display: 'Bodoni Moda', 'Times New Roman', serif;
+  --font-body:    'Hanken Grotesk', system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
