@@ -3,8 +3,6 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(), // 🔴 DÒNG QUAN TRỌNG
-  ],
+  base: '/song-hoa-wedding/', // 🔴 RẤT QUAN TRỌNG
+  plugins: [react(), tailwindcss()],
 });

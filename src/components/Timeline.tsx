@@ -1,19 +1,57 @@
-const timeline = [
+import { motion } from 'framer-motion';
+
+const EVENTS = [
   { time: '10:00', text: 'Chào đón khách' },
   { time: '10:30', text: 'Khai tiệc cưới' },
   { time: '11:00', text: 'Ảnh & games' },
+  { time: '12:00', text: 'Tiệc ngọt & kết thúc' },
 ];
 
-function Timeline() {
+export default function Timeline() {
   return (
-    <div className='space-y-4'>
-      {timeline.map((e, i) => (
-        <div key={i} className='flex items-center gap-3'>
-          <div className='w-16 font-bold text-rose-500'>{e.time}</div>
-          <div>{e.text}</div>
-        </div>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      {EVENTS.map((e, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.09 }}
+          style={{
+            display:         'grid',
+            gridTemplateColumns: '5rem 1px 1fr',
+            gap:             '1.25rem',
+            alignItems:      'center',
+            padding:         '1.25rem 0',
+            borderBottom:    i < EVENTS.length - 1 ? '1px solid var(--gray-light)' : 'none',
+          }}
+        >
+          {/* Time */}
+          <span style={{
+            fontFamily:    'var(--font-display)',
+            fontSize:      'clamp(1.1rem, 2vw, 1.35rem)',
+            fontWeight:    400,
+            color:         'var(--black)',
+            letterSpacing: '0.02em',
+            textAlign:     'right',
+          }}>
+            {e.time}
+          </span>
+
+          {/* Thin separator */}
+          <div style={{ height: '1.4rem', width: 1, backgroundColor: 'var(--gray-mid)' }} />
+
+          {/* Event */}
+          <span style={{
+            fontFamily: 'var(--font-body)',
+            fontSize:   'clamp(1rem, 1.8vw, 1.2rem)',
+            color:      '#444',
+            fontWeight: 400,
+          }}>
+            {e.text}
+          </span>
+        </motion.div>
       ))}
     </div>
   );
 }
-export default Timeline;

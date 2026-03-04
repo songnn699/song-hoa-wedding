@@ -1,67 +1,77 @@
 @import 'tailwindcss';
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --black:        #111111;
+  --off-black:    #2a2a2a;
+  --gray-bg:      #f2f2f2;
+  --gray-mid:     #888888;
+  --gray-light:   #e0e0e0;
+  --white:        #ffffff;
 
-  color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87); */
-  /* background-color: #242424; */
+  --font-display: 'Bodoni Moda', 'Times New Roman', serif;
+  --font-body:    'Hanken Grotesk', system-ui, sans-serif;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 300;
 }
 
-body {
-  @apply bg-[#fffdf9] text-gray-800;
-  font-family: 'Georgia', 'Times New Roman', serif;
+button { cursor: pointer; }
+
+/* ─── Split panel layout ─────────────── */
+.split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.split-photo {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.split-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4.5rem 3.5rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@media (max-width: 900px) {
+  .split-section { grid-template-columns: 1fr; }
+  .split-photo    { min-height: 360px; }
+  .split-content  { padding: 3rem 2rem; }
+}
+
+@media (min-width: 1200px) {
+  .split-content { padding: 6rem 5rem; }
+}
+
+/* ─── Floating hearts (hero only) ─────── */
+@keyframes float-heart {
+  0%   { transform: translateY(0) scale(1);   opacity: 0; }
+  8%   { opacity: 1; }
+  85%  { opacity: 0.4; }
+  100% { transform: translateY(-110vh) scale(0.6); opacity: 0; }
+}
+
+/* ─── Scroll-down bob (hero) ──────────── */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(9px); }
 }
