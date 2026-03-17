@@ -9,7 +9,6 @@ import PhotoAlbum from './components/Album';
 import Countdown from './components/CountDown';
 import WeddingMap from './components/GoogleMap';
 import Hero from './components/Hero';
-import RSVP from './components/RSV';
 import Timeline from './components/Timeline';
 import WeddingMapMen from './components/GoogleMapMen';
 import TimelineMen from './components/TimelineMen';
