@@ -130,7 +130,7 @@ export default function App() {
             }}
           >
             Chúng tôi tin rằng mỗi câu chuyện tình yêu là duy nhất và xứng đáng
-            được lưu giữ theo cách đẹp nhất. Song và Hoa — hai con người, một
+            được lưu giữ theo cách đẹp nhất. Sông và Hoà — hai con người, một
             hành trình, và một ngày trọng đại mà chúng tôi mong muốn chia sẻ
             cùng những người thân yêu nhất.
           </motion.p>
