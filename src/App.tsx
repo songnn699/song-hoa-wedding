@@ -12,6 +12,7 @@ import Hero from './components/Hero';
 import Timeline from './components/Timeline';
 import WeddingMapMen from './components/GoogleMapMen';
 import TimelineMen from './components/TimelineMen';
+import MusicPlayer from './components/MusicPlayer';
 
 /* ── animation presets ──────────────────────────── */
 const fadeUp = {
@@ -98,6 +99,11 @@ function ThinLine() {
 export default function App() {
   return (
     <div style={{ backgroundColor: 'var(--white)', color: 'var(--black)' }}>
+      {/* ════════════════════════════════════════
+          MUSIC PLAYER — float button
+          ════════════════════════════════════════ */}
+      <MusicPlayer />
+
       {/* ════════════════════════════════════════
           HERO — giữ nguyên
           ════════════════════════════════════════ */}
