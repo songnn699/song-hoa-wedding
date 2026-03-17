@@ -1,16 +1,18 @@
 import { motion } from 'framer-motion';
 import './App.css';
 import './index.css';
-import img1 from './assets/couple1.jpg';
-import img2 from './assets/couple2.jpg';
-import img3 from './assets/couple3.jpg';
-import img4 from './assets/couple4.jpg';
+import img1 from './assets/love_story_2.jpg';
+import img2 from './assets/hero_banner.jpg';
+import img3 from './assets/kiss_banner.jpg';
+import img4 from './assets/hero_banner2.jpg';
 import PhotoAlbum from './components/Album';
 import Countdown from './components/CountDown';
 import WeddingMap from './components/GoogleMap';
 import Hero from './components/Hero';
 import RSVP from './components/RSV';
 import Timeline from './components/Timeline';
+import WeddingMapMen from './components/GoogleMapMen';
+import TimelineMen from './components/TimelineMen';
 
 /* ── animation presets ──────────────────────────── */
 const fadeUp = {
@@ -30,19 +32,19 @@ const fadeIn = {
 /* ── story data ─────────────────────────────────── */
 const STORIES = [
   {
-    date: '03 · 2019',
+    date: '03 · 2025',
     title: 'Lần đầu gặp nhau',
     content:
       'Chúng tôi gặp nhau vào một buổi chiều mưa. Không ai nghĩ rằng cuộc gặp gỡ đó lại kéo dài đến tận hôm nay.',
   },
+  // {
+  //   date: '08 · 2020',
+  //   title: 'Chuyến đi đầu tiên',
+  //   content:
+  //     'Chuyến đi xa đầu tiên, cãi nhau nhiều, nhưng cũng hiểu nhau hơn. Tình yêu bắt đầu lớn dần từ đó.',
+  // },
   {
-    date: '08 · 2020',
-    title: 'Chuyến đi đầu tiên',
-    content:
-      'Chuyến đi xa đầu tiên, cãi nhau nhiều, nhưng cũng hiểu nhau hơn. Tình yêu bắt đầu lớn dần từ đó.',
-  },
-  {
-    date: '12 · 2023',
+    date: '03 . 2026',
     title: 'Lời cầu hôn',
     content:
       'Không hoa hồng, không đông người, chỉ là một lời hứa cho cả cuộc đời.',
@@ -164,8 +166,8 @@ export default function App() {
 
           <p
             style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.8rem',
+              fontFamily: 'Inter',
+              fontSize: '1.5rem',
               textTransform: 'uppercase',
               letterSpacing: '0.22em',
               color: 'var(--gray-mid)',
@@ -216,8 +218,8 @@ export default function App() {
             <div key={i} style={{ marginBottom: i === 0 ? '3rem' : 0 }}>
               <p
                 style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.8rem',
+                  fontFamily: 'Inter',
+                  fontSize: '1.5rem',
                   textTransform: 'uppercase',
                   letterSpacing: '0.22em',
                   color: 'var(--gray-mid)',
@@ -285,7 +287,6 @@ export default function App() {
           <ThinLine />
 
           <div className='flex flex-col  w-full justify-between'>
-            
             <div
               style={{
                 display: 'flex',
@@ -298,7 +299,10 @@ export default function App() {
                   label: 'Thời gian',
                   value: '11h00 sáng · Chủ nhật, 29 / 03 / 2026',
                 },
-                { label: 'Địa điểm', value: 'Thôn Nghĩa Phú, Xã Tuệ Tĩnh, TP. Hải Phòng' },
+                {
+                  label: 'Địa điểm',
+                  value: 'Thôn Nghĩa Phú, Xã Tuệ Tĩnh, TP. Hải Phòng',
+                },
               ].map((item) => (
                 <motion.div key={item.label} {...fadeUp}>
                   <p
@@ -348,7 +352,6 @@ export default function App() {
           <ThinLine />
 
           <div className='flex flex-col  w-full justify-between'>
-            
             <div
               style={{
                 display: 'flex',
@@ -361,7 +364,10 @@ export default function App() {
                   label: 'Thời gian',
                   value: '8h30 sáng · Chủ nhật, 29 / 03 / 2026',
                 },
-                { label: 'Địa điểm', value: '2/15 Ngõ 253 An Thượng, An Khánh, Hà Nội' },
+                {
+                  label: 'Địa điểm',
+                  value: '2/15 Ngõ 253 An Thượng, An Khánh, Hà Nội',
+                },
               ].map((item) => (
                 <motion.div key={item.label} {...fadeUp}>
                   <p
@@ -437,24 +443,45 @@ export default function App() {
       {/* ════════════════════════════════════════
           7. TIMELINE
           ════════════════════════════════════════ */}
-      <section style={{ backgroundColor: 'var(--gray-bg)', padding: '6rem 0' }}>
-        <div style={{ maxWidth: 640, margin: '0 auto', padding: '0 3rem' }}>
-          <SectionLabel>Chương trình tiệc cưới</SectionLabel>
-          <ThinLine />
-          <Timeline />
+      <section
+        className='py-16 md:py-24'
+        style={{ backgroundColor: 'var(--gray-bg)' }}
+      >
+        <div className='flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-12 md:gap-8 px-6 md:px-12'>
+          <div className='w-full md:w-6/12'>
+            <SectionLabel>Chương trình tiệc cưới nhà trai</SectionLabel>
+            <ThinLine />
+            <TimelineMen />
+          </div>
+
+          <div className='w-full md:w-6/12'>
+            <SectionLabel>Chương trình tiệc cưới nhà gái</SectionLabel>
+            <ThinLine />
+            <Timeline />
+          </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════
           8. MAP + RSVP
           ════════════════════════════════════════ */}
-      <section style={{ backgroundColor: 'var(--white)', padding: '6rem 0' }}>
-        <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 3rem' }}>
-          <SectionLabel>Địa điểm tổ chức</SectionLabel>
-          <WeddingMap />
-          <div style={{ marginTop: '5.5rem' }}>
-            <SectionLabel>Xác nhận tham dự</SectionLabel>
-            <RSVP />
+      <section
+        className='py-16 md:py-24'
+        style={{ backgroundColor: 'var(--white)' }}
+      >
+        <div className='flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-12 md:gap-10 px-6 md:px-12'>
+          <div className='w-full md:flex-1'>
+            <SectionLabel>Địa điểm tổ chức nhà trai</SectionLabel>
+            <div className='w-full mt-4 rounded-xl overflow-hidden'>
+              <WeddingMapMen />
+            </div>
+          </div>
+
+          <div className='w-full md:flex-1'>
+            <SectionLabel>Địa điểm tổ chức nhà gái</SectionLabel>
+            <div className='w-full mt-4 rounded-xl overflow-hidden'>
+              <WeddingMap />
+            </div>
           </div>
         </div>
       </section>
@@ -534,12 +561,12 @@ export default function App() {
               letterSpacing: '0.08em',
             }}
           >
-            Song &amp; Hoa
+            Sông &amp; Hòa
           </p>
           <p
             style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.78rem',
+              fontFamily: 'Inter',
+              fontSize: '1.5rem',
               textTransform: 'uppercase',
               letterSpacing: '0.3em',
               color: 'var(--gray-mid)',
@@ -547,10 +574,24 @@ export default function App() {
               margin: 0,
             }}
           >
-            14 · 12 · 2025 &nbsp;·&nbsp; Save the Date
+            29 · 03 · 2026 &nbsp;·&nbsp; Save the Date
           </p>
         </motion.div>
       </footer>
+
+      {/* <section style={{ backgroundColor: 'var(--white)', padding: '6rem 0' }}>
+        <div className='flex flex-col w-full justify-between items-center px-2'>
+          <SectionLabel>Gửi quà cho cô dâu chú rể</SectionLabel>
+          <div className='flex flex-row w-full justify-between px-2'>
+            <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 3rem' }}>
+              <WeddingMapMen />
+            </div>
+            <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 3rem' }}>
+              <WeddingMap />
+            </div>
+          </div>
+        </div>
+      </section> */}
     </div>
   );
 }

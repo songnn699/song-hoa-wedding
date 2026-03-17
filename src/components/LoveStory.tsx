@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import img1 from '../assets/couple1.jpg';
-import img2 from '../assets/couple2.jpg';
+import img1 from '../assets/hero_banner.jpg';
+import img2 from '../assets/love_story_2.jpg';
 import img3 from '../assets/couple3.jpg';
 
 const STORIES = [

@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 
 const EVENTS = [
-  { time: '10:00', text: 'Chào đón khách' },
-  { time: '10:30', text: 'Khai tiệc cưới' },
-  { time: '11:00', text: 'Ảnh & games' },
-  { time: '12:00', text: 'Tiệc ngọt & kết thúc' },
+  { time: '16:30 - 28/03', text: 'Chào đón khách' },
+  { time: '17:00 - 28/03', text: 'Khai tiệc' },
+  { time: '08:30 - 29/03', text: 'Lễ vu quy' },
 ];
 
 export default function Timeline() {
@@ -19,9 +18,10 @@ export default function Timeline() {
           transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.09 }}
           style={{
             display:         'grid',
-            gridTemplateColumns: '5rem 1px 1fr',
+            gridTemplateColumns: '10rem 1px 1fr',
             gap:             '1.25rem',
             alignItems:      'center',
+            justifyItems: 'flex-start',
             padding:         '1.25rem 0',
             borderBottom:    i < EVENTS.length - 1 ? '1px solid var(--gray-light)' : 'none',
           }}

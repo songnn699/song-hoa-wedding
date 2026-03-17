@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import coupleHero from '../assets/couple5.jpg';
+import coupleHero from '../assets/end_img.jpg';
+import mobileHero from '../assets/hero_banner_mobile.jpg';
 
 const HEARTS = Array.from({ length: 14 }, (_, i) => ({
   id: i,
@@ -37,16 +38,19 @@ export default function Hero() {
       <motion.div
         style={{ y: imgY, position: 'absolute', inset: 0, scale: 1.12 }}
       >
-        <img
-          src={coupleHero}
-          alt='Song & Hoa'
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center top',
-          }}
-        />
+        <picture>
+          <source media='(max-width: 767px)' srcSet={mobileHero} />
+          <img
+            src={coupleHero}
+            alt='Song & Hoa'
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+            }}
+          />
+        </picture>
       </motion.div>
 
       {/* ── Gradient overlay: photo → ivory ── */}
@@ -105,6 +109,7 @@ export default function Hero() {
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
+          // marginTop: '4rem',
           padding: '0 1.5rem',
         }}
       >
@@ -163,14 +168,14 @@ export default function Hero() {
             display: 'flex',
             alignItems: 'center',
             // gap: '0.8rem',
-            margin: '1.4  rem 0',
+            margin: '1rem 0',
             // color: 'rgba(232,180,184,0.85)',
             color: 'white',
             fontSize: '0.8rem',
             letterSpacing: '0.25em',
           }}
         >
-          {/* ♥ */}
+          ♥
           <span
             style={{
               display: 'block',
@@ -180,7 +185,7 @@ export default function Hero() {
               backgroundColor: 'white',
             }}
           />
-          {/* ✦ ✦ ✦ */}
+          ✦ ✦ ✦
           <span
             style={{
               display: 'block',
@@ -190,6 +195,7 @@ export default function Hero() {
               backgroundColor: 'white',
             }}
           />
+          ♥
         </motion.div>
 
         {/* Date */}

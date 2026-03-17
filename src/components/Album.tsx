@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import img1 from '../assets/couple1.jpg';
-import img2 from '../assets/couple2.jpg';
-import img3 from '../assets/couple3.jpg';
-import img4 from '../assets/couple4.jpg';
+import img1 from '../assets/round_1.jpg';
+import img2 from '../assets/round_3.jpg';
+import img3 from '../assets/round_4.jpg';
+import img4 from '../assets/round_2.jpg';
 
 const IMAGES = [img1, img2, img3, img4];
 
